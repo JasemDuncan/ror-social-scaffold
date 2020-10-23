@@ -256,10 +256,6 @@ DEPENDENCIES
   sqlite3
   turbolinks (~> 5)
   tzinfo-data
-<<<<<<< HEAD
-=======
-  uglifier (>= 1.3.0)
->>>>>>> f82d1138ad18456980417e2a96cdfa1ca1054e9d
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
