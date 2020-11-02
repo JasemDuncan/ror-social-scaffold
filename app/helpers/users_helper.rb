@@ -12,6 +12,7 @@ module UsersHelper
             options= '<label class= "profile-link">'
             options.concat((link_to 'Accept', friendship_path(user), method: :patch))
             options.concat('</label>')
+            options.concat('|')
             options.concat('<label class= "profile-link">')
             options.concat((link_to 'Cancel', friendship_path(user), method: :delete))
             options.concat('</label>')
