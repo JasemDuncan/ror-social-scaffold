@@ -9,5 +9,16 @@ class FriendshipsController < ApplicationController
         else
             redirect_to users_path, notice: 'You do not send an invitation.'
         end
-      end
+    end
+
+    def update
+        @user=User.find(params[:id])
+        puts params[:id].to_s
+        puts @user.name
+    end
+
+    def delete
+        
+    end
+
 end
