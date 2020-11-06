@@ -26,7 +26,7 @@ module UsersHelper
         if current_user.pending_friends.include?(user)
             'Pending request'
         else
-            link_to '+Add', user_friendships_path(user.id), method: :post, class: 'profile-link'
+        button_to '**Add**', user_friendships_path(user.id), method: :post, class: 'profile-button'
         end
     end
 end

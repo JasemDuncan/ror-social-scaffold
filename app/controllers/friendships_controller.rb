@@ -13,12 +13,16 @@ class FriendshipsController < ApplicationController
 
     def update
         @user=User.find(params[:id])
-        puts params[:id].to_s
-        puts @user.name
+        current_user.confirm_friend(@user)
+        redirect_to user_path(@user)
+        flash[:notice]='You accept an Invitation'
     end
 
-    def delete
-        
+    def destroy
+        @user=User.find(params[:id])
+        current_user.reject_friend(@user)
+        redirect_to user_path(@user)
+        flash[:notice]='You reject an Invitation'
     end
 
 end

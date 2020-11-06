@@ -27,11 +27,29 @@ class User < ApplicationRecord
   def friend_requests
     inverse_friendships.map{|friendship| friendship.user if !friendship.confirmed}.compact    
   end
+  
+  def request_friend(user)
+    return false if relation_exist?(user)
+    friendship=friendships.build
+    friendship.friend_id = user.id
+    friendship.confirmed = false
+    friendship.save
+  end
 
   def confirm_friend(user)  
     friendship=inverse_friendships.find{|friendship| friendship.user == user}
+    friendship2=friendships.build
+    friendship2.user_id=id
+    friendship2.friend_id=user.id
+    friendship2.confirmed = true
     friendship.confirmed = true
     friendship.save
+    friendship2.save
+  end
+
+  def reject_friend(user)
+    friendship=inverse_friendships.find{|friend| friend.user == user}
+    friendship.destroy
   end
 
   def friend?(user)
@@ -42,4 +60,7 @@ class User < ApplicationRecord
     friendships.find { |friendship| friendship.friend_id == user.id }
   end
 
+  def relation_exist?(user)
+    friends.include?(user) || pending_friends.include?(user) || friend_request.include?(user) || user == self
+  end
 end
