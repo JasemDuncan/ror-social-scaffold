@@ -51,10 +51,10 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara','>= 2.15'
+  gem 'capybara', '>= 2.15'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
-  gem 'webdrivers','~> 4.0'
+  gem 'webdrivers', '~> 4.0'
 end
 
 group :development do
