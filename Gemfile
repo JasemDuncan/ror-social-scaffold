@@ -55,6 +55,8 @@ group :test do
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers', '~> 4.0'
+  gem 'shoulda-callback-matchers', '~> 1.1.1'
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 group :development do
