@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 RSpec.describe 'Testing Friendship features', type: :feature, feature: true do
   context 'context' do
     before do
