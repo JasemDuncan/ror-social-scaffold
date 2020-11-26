@@ -14,13 +14,12 @@ RSpec.describe Friendship, type: :model do
     expect(u.friend?(@hans)).to be true
   end
 
-  it 'Show there is no relation of friends' do    
+  it 'Show there is no relation of friends' do
     u = User.find(@yaser.id)
     expect(u.friend?(@jan)).to be false
   end
 
   context 'Association' do
     it { expect(subject).to belong_to(:user) }
-    
   end
 end
