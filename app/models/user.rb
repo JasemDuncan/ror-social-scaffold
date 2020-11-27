@@ -41,9 +41,9 @@ class User < ApplicationRecord
     friendship = inverse_friendships.find { |friend| friend.user == user }
     friendship2 = friendships.build
     friendship2.user_id = id
-    friendship2.friend_id = user.id
-    friendship2.confirmed = true
+    friendship2.friend_id = user.id    
     friendship.confirmed = true
+    friendship2.confirmed = true
     friendship.save
     friendship2.save
   end
