@@ -1,5 +1,6 @@
 require 'rails_helper'
-require 'rails_helper_capybara'
+#require 'rails_helper_capybara'
+Capybara.default_driver = :selenium_chrome
 
 RSpec.feature 'Like', type: :feature do
   context 'context' do
@@ -12,6 +13,8 @@ RSpec.feature 'Like', type: :feature do
     end
 
     scenario 'Give like ' do
+      fill_in 'post_content', with: 'This is Hans post'
+      click_on 'Save'
       find(:xpath, '//a[@href="/posts/1/likes"]').click
       expect(page).to have_content('You liked a post.')
     end

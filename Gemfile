@@ -48,17 +48,20 @@ gem 'rubocop', '0.81.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails', '~> 4.0.1'
+  gem 'factory_bot_rails', '~> 6.1'
 end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'rspec-rails'
+  
   gem 'selenium-webdriver'
+  gem 'database_cleaner'
 
   gem 'shoulda-callback-matchers', '~> 1.1.1'
   gem 'shoulda-matchers', '~> 4.0'
-
   gem 'webdrivers', '~> 4.0'
+
 end
 
 group :development do
