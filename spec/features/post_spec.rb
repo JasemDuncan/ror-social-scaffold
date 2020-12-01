@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.feature 'Post', type: :feature do
   context 'context' do
     before do

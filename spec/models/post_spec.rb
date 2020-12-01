@@ -17,8 +17,8 @@ RSpec.describe Post, type: :model do
     it {
       expect(subject).to validate_presence_of(:content)
     }
-    it { 
-        expect(Post.ordered_by_most_recent.first).to eq(Post.last) 
+    it {
+      expect(Post.ordered_by_most_recent.first).to eq(Post.last)
     }
   end
 
