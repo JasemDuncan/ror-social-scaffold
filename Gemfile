@@ -50,17 +50,15 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 4.0.1'
   gem 'factory_bot_rails', '~> 6.1'
+  gem 'capybara', '>= 2.15'
 end
 
-group :test do
-  gem 'capybara', '>= 2.15'
-  
-  gem 'selenium-webdriver'
-  gem 'database_cleaner'
-
-  gem 'shoulda-callback-matchers', '~> 1.1.1'
-  gem 'shoulda-matchers', '~> 4.0'
-  gem 'webdrivers', '~> 4.0'
+group :test do   
+  # gem 'selenium-webdriver'
+  gem 'database_cleaner-active_record'
+  # gem 'shoulda-callback-matchers', '~> 1.1.1'
+  # gem 'shoulda-matchers', '~> 4.0'
+  # gem 'webdrivers', '~> 4.0'
 
 end
 
