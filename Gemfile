@@ -57,7 +57,7 @@ group :test do
   # gem 'selenium-webdriver'
   gem 'database_cleaner-active_record'
   # gem 'shoulda-callback-matchers', '~> 1.1.1'
-  # gem 'shoulda-matchers', '~> 4.0'
+  gem 'shoulda-matchers'
   # gem 'webdrivers', '~> 4.0'
 
 end

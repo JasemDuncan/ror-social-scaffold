@@ -1,6 +1,5 @@
-require 'models/rails_helper'
-#require 'rails_helper_capybara'
-# Capybara.default_driver = :selenium_chrome
+require 'rails_helper'
+
 
 RSpec.feature 'Post', type: :feature do
   context 'context' do
