@@ -11,6 +11,10 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :friendships
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
+  has_many :confirmed_friendships, -> { where confirmed: true }, class_name: "Friendship"
+  has_many :friends, through: :confirmed_friendships
+  has_many :pending_friendships, -> { where confirmed: false }, class_name: "Friendship", foreign_key: "user_id"
+  has_many :pending_friends, through: :pending_friendships, source: :friend
 
   def friends
     friends_array = friendships.map { |friendship| friendship.friend if friendship.confirmed }
@@ -37,16 +41,16 @@ class User < ApplicationRecord
     friendship.save
   end
 
-  def confirm_friend(user)
-    friendship = inverse_friendships.find { |friend| friend.user == user }
-    friendship2 = friendships.build
-    friendship2.user_id = id
-    friendship2.friend_id = user.id
-    friendship.confirmed = true
-    friendship2.confirmed = true
-    friendship.save
-    friendship2.save
-  end
+  # def confirm_friend(user)
+  #   friendship = inverse_friendships.find { |friend| friend.user == user }
+  #   friendship2 = friendships.build
+  #   friendship2.user_id = id
+  #   friendship2.friend_id = user.id
+  #   friendship.confirmed = true
+  #   friendship2.confirmed = true
+  #   friendship.save
+  #   friendship2.save
+  # end before
 
   def reject_friend(user)
     friendship = inverse_friendships.find { |friend| friend.user == user }
@@ -63,5 +67,9 @@ class User < ApplicationRecord
 
   def relation_exist?(user)
     friends.include?(user) || pending_friends.include?(user) || friend_requests.include?(user) || user == self
+  end
+  def friends_and_own_posts
+    Post.where(user: (self.friends << self))
+    # This will produce SQL query with IN. Something like: select * from posts where user_id IN (1,45,874,43);
   end
 end
