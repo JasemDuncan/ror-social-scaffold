@@ -55,14 +55,12 @@ class User < ApplicationRecord
   #   friendship2.save
   # end before
 
-  def confirm_friend(user)
-    puts 'vargass'
+  def confirm_friend(user)    
     friend = Friendship.find_by(user_id:user.id,friend_id:id)
     friend.update_attributes(confirmed: true)
     Friendship.create!(friend_id: user.id,
                     user_id: id,
-                    confirmed: true)
-    puts '#vargass'
+                    confirmed: true)    
   end
 
   def reject_friend(user)

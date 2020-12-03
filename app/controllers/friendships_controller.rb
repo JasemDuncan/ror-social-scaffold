@@ -12,12 +12,8 @@ class FriendshipsController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    # current_user.confirm_friend(@user) before    
-    puts current_user.name
-    puts current_user.id
-    current_user.confirm_friend(@user)
-    puts 'valencia'
+    @user = User.find(params[:id])    
+    current_user.confirm_friend(@user)    
     redirect_to user_path(@user)
     flash[:notice] = 'You accept an Invitation'
   end

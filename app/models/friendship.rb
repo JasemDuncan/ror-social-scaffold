@@ -1,12 +1,10 @@
 class Friendship < ApplicationRecord
   belongs_to :user
   belongs_to :friend, class_name: 'User'
-  # def confirm_friend(user)
-  #   puts 'vargass'
+  # def confirm_friend(user)  
   #   self.update_attributes(confirmed: true)
   #   Friendship.create!(friend_id: self.user_id,
   #                   user_id: self.friend_id,
-  #                   confirmed: true)
-  #   puts '#vargass'
+  #                   confirmed: true)  
   # end
 end
