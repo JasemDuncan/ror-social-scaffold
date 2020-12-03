@@ -2,7 +2,7 @@ class FriendshipsController < ApplicationController
   def create
     @friendship = current_user.friendships.build
     @friendship.friend_id = params[:user_id]
-    @friendship.confirmed=false
+    @friendship.confirmed = false
 
     if @friendship.save
       redirect_to users_path, notice: 'You send an invitation.'
@@ -12,8 +12,8 @@ class FriendshipsController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])    
-    current_user.confirm_friend(@user)    
+    @user = User.find(params[:id])
+    current_user.confirm_friend(@user)
     redirect_to user_path(@user)
     flash[:notice] = 'You accept an Invitation'
   end

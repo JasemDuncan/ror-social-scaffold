@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    #@timeline_posts = @post.timeline_posts(current_user)
+    # @timeline_posts = @post.timeline_posts(current_user)
     timeline_posts
   end
 
@@ -25,6 +25,6 @@ class PostsController < ApplicationController
   end
 
   def timeline_posts
-    @timeline_posts ||= current_user.friends_and_own_posts.ordered_by_most_recent.includes(:user)    
+    @timeline_posts ||= current_user.friends_and_own_posts.ordered_by_most_recent.includes(:user)
   end
 end
