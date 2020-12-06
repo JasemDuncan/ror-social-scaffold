@@ -40,6 +40,7 @@ RSpec.configure do |config|
   # instead of true.
   # config.use_transactional_fixtures = false
 
+  config.include Devise::Test::ControllerHelpers, type: :helper
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
 
