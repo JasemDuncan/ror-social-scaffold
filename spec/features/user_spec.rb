@@ -10,7 +10,7 @@ RSpec.describe 'Testing Friendship features', type: :feature, feature: true do
       fill_in 'Password', with: '123456'
       click_on 'Log in'
     end
-    scenario 'Test is the user hans@gmail.com can log in' do
+    scenario 'Test if the user hans@gmail.com can log in' do
       expect(page).to have_content('Signed in successfully.')
     end
     scenario 'Create a friend request, Yaser invites Hans, check if a Pending request exist' do

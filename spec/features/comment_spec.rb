@@ -1,5 +1,6 @@
 require 'rails_helper'
-require 'rails_helper_capybara'
+# require 'rails_helper_capybara'
+# Capybara.default_driver = :selenium_chrome
 
 RSpec.feature 'Comment', type: :feature do
   context 'context' do
@@ -12,6 +13,8 @@ RSpec.feature 'Comment', type: :feature do
     end
 
     scenario 'Do a comment' do
+      fill_in 'post_content', with: 'This is Hans post'
+      click_on 'Save'
       find(:xpath, '//form[@id="new_comment"][@action="/posts/1/comments"]//input[@id="comment_content"]').set('This a comment from Yaser')
       find(:xpath, '//form[@id="new_comment"][@action="/posts/1/comments"]').click_on('Comment')
       expect(page).to have_content('Comment was successfully created.')

@@ -1,22 +1,12 @@
 require 'rails_helper'
-require 'rails_helper_capybara'
 
-RSpec.feature 'Like', type: :feature do
-  context 'context' do
-    before do
-      @yaser = User.create(email: 'yaser@mail.com', name: 'Yaser Alain', password: '123456')
-      @hans = User.create(email: 'hans@mail.com', name: 'Hans Bill', password: '123456')
-      visit 'http://localhost:3000/users/sign_in'
-      fill_in 'Email', with: 'hans@gmail.com'
-      fill_in 'Password', with: '123456'
-      click_on 'Log in'
-    end
-
-    it 'show friends confirmed, Yaser invites Hans' do
-      @yaser.request_friend(@hans)
-      @hans.confirm_friend(@yaser)
-      visit 'http://localhost:3000/users'
-      expect(page).to have_content('Connected')
+RSpec.describe ApplicationHelper, type: :helper do
+  let(:yaser) { User.create(name: 'Yaser', email: 'yaser@gmail.com', password: '123456') }
+  let(:hans) { User.create(name: 'Hans', email: 'hans@gmail.com', password: '123456') }
+  let(:post) { Post.create(content: 'This a Hans post', user_id: hans.id) }
+  describe 'like' do
+    it 'like a post' do
+      expect(helper.like_or_dislike_btn(post)).to include('Like!')
     end
   end
 end
