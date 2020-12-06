@@ -15,4 +15,29 @@ module ApplicationHelper
       link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
   end
+
+  def signin_signout
+    if current_user
+
+      link_to 'Sign out', destroy_user_session_path, method: :delete
+    else
+      link_to 'Sign in', user_session_path
+    end
+  end
+
+  def notice_present
+    return unless notice.present?
+
+    content_tag(:div, class: 'notice') do
+      content_tag(:p, notice)
+    end
+  end
+
+  def alert_present
+    return unless alert.present?
+
+    content_tag(:div, class: 'alert') do
+      content_tag(:p, alert)
+    end
+  end
 end

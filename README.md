@@ -1,77 +1,46 @@
 # Scaffold for social media app with Ruby on Rails
 
 > This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+## ERB
+
+![screenshot](docs/social-media-ERB.png)
 
 ## Built With
 
-- Ruby v2.7.0
-- Ruby on Rails v5.2.4
-
-## Live Demo
-
-TBA
+-   ruby '2.7.1'
+-   'rails', '~> 6.0.3', '>= 6.0.3.2'
 
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+​To have a version on your local machine:
 
-### Prerequisites
+-   Clone this repository
+-   Open a terminal on the containing folder of this project
+-   Run 'bundle install' to install the dependencies
+-   Set the database using the command 'bin/rake db:migrate'
+-   Run the server using the command 'rails server'
 
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+-   Access http://localhost:3000/ in your browser
 
-### Setup
-
-Instal gems with:
-
-```
-bundle install
-```
-
-Setup database with:
-
-```
-   rails db:create
-   rails db:migrate
-```
-
-### Github Actions
-
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
-
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
-
-
-### Usage
-
-Start server with:
-
-```
-    rails server
-```
-
-Open `http://localhost:3000/` in your browser.
-
-### Run tests
-
-```
-    rpsec --format documentation
-```
-
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
-
-### Deployment
-
-TBA
+-   Use the links, forms and buttons to explore the features and create objects in our database
 
 ## Authors
 
-TBA
+👤 **Jasem Duncan Valencia Vargas**
+
+-   Github: [@JasemDuncan](https://github.com/JasemDuncan)
+-   Linkedin: [@Jasem-Duncan-Valencia](https://www.linkedin.com/in/jasem-duncan-valencia/)
+
+👤 **Kingsley McSimon Ogbonna**
+
+-   Github: [@KingsleyMcSimon](https://github.com/KingsleyMcSimon)
+-   Linkedin: [@KingsleyMcSimon](https://www.linkedin.com/in/kingsley-mcsimon-o-44411517a/)
+
+
+## 🤝 Link To The Project On Github: 
+
+[Project On Github](https://github.com/KingsleyMcSimon/Private-Events)
 
 ## 🤝 Contributing
 
@@ -83,11 +52,7 @@ Feel free to check the [issues page](issues/).
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-TBA
-
 ## 📝 License
 
-TBA
+This project is [MIT](lic.url) licensed.
 
