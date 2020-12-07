@@ -43,7 +43,7 @@
 
 ## Live Demo 🎥
 
--   [Link to Heroku](https://github.com/JasemDuncan)
+-   [Link to Heroku](https://hidden-savannah-28034.herokuapp.com/)
 
 ## Built With 💪
 
